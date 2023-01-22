@@ -246,7 +246,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { sum, glob } = nativeBinding
+const { glob, rsGlob } = nativeBinding
 
-module.exports.sum = sum
 module.exports.glob = glob
+module.exports.rsGlob = rsGlob

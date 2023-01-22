@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "main": "index.js",
   "types": "index.d.ts",
-  "workspaces":[
-    "npm/**"
-  ],
   "napi": {
     "name": "rs-glob",
     "triples": {
@@ -43,6 +40,17 @@
     "version": "napi version"
   },
   "optionalDependencies": {
-    "rs-glob-darwin-arm64": "0.0.0"
+    "rs-glob-android-arm-eabi":"workspace:*",
+    "rs-glob-android-arm64":"workspace:*",
+    "rs-glob-darwin-arm64":"workspace:*",
+    "rs-glob-darwin-x64":"workspace:*",
+    "rs-glob-freebsd-x64":"workspace:*",
+    "rs-glob-linux-arm-gnueabihf":"workspace:*",
+    "rs-glob-linux-arm64-gnu":"workspace:*",
+    "rs-glob-linux-arm64-musl":"workspace:*",
+    "rs-glob-linux-x64-gnu":"workspace:*",
+    "rs-glob-linux-x64-musl":"workspace:*",
+    "rs-glob-win32-arm64-msvc":"workspace:*",
+    "rs-glob-win32-ia32-msvc":"workspace:*"
   }
 }

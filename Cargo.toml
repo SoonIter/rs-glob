@@ -1,5 +1,9 @@
 [workspace]
-members = ["core", "node", "glob-match"]
+members = [
+  "core",
+  "node",
+  "glob-match",
+]
 
 [profile.release]
 codegen-units = 1

@@ -5,11 +5,11 @@ use rs_glob::*;
 extern crate napi_derive;
 
 #[napi]
-pub fn sum(a: i32, b: i32) -> i32 {
-  a + b
+pub fn glob(pattern: String, st: String) -> bool {
+  glob_match(&pattern, &st)
 }
 
-#[napi]
-pub fn glob(s1: String, s2: String) -> bool {
-  glob_match(s1.as_str(), s2.as_str())
+#[napi()]
+pub fn rs_glob(pattern: String) -> Vec<String> {
+  rg(&pattern)
 }
