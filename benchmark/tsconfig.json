@@ -5,6 +5,7 @@
     "module": "commonjs",
     "outDir": "dist",
     "target": "ESNext",
-    "rootDir": "."
+    "rootDir": ".",
+    "esModuleInterop": true
   }
 }

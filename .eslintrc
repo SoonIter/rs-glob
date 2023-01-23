@@ -1,0 +1,21 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "no-only-tests/no-only-tests": "off",
+    "no-console": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          "path"
+        ]
+      }
+    ],
+    "import/no-named-as-default": "off"
+  }
+}

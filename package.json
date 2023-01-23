@@ -5,6 +5,30 @@
   "description": "An extremely fast glob matching library with support for wildcards, character classes, and brace expansion.",
   "main": "index.js",
   "scripts": {
-    "bootstrap": "pnpm install"
+    "bootstrap": "pnpm install",
+    "bench": "node -r @swc-node/register benchmark/bench.ts",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.29.4",
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "@swc-node/register": "^1.5.5",
+    "@swc/core": "^1.3.27",
+    "eslint": "^8.32.0",
+    "lint-staged": "^13.1.0",
+    "simple-git-hooks": "^2.8.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint -e $HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{jsx?,tsx?,mjs,cjs}": [
+      "eslint --fix"
+    ],
+    "*.rs":[
+      "rustfmt"
+    ]
   }
 }
