@@ -7,11 +7,11 @@
   "cpu": [
     "ia32"
   ],
+  "license": "MIT",
   "main": "rs-glob.win32-ia32-msvc.node",
   "files": [
     "rs-glob.win32-ia32-msvc.node"
   ],
-  "license": "MIT",
   "engines": {
     "node": ">= 10"
   }

@@ -27,7 +27,7 @@
     "*.{jsx?,tsx?,mjs,cjs}": [
       "eslint --fix"
     ],
-    "*.rs":[
+    "*.rs": [
       "rustfmt"
     ]
   }

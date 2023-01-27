@@ -9,7 +9,7 @@ pub fn glob(pattern: String, st: String) -> bool {
   glob_match(&pattern, &st)
 }
 
-#[napi()]
-pub fn rs_glob(pattern: String) -> Vec<String> {
-  rg(&pattern)
+#[napi]
+pub async fn rs_glob(pattern: String) -> Vec<String> {
+  rg(&pattern).await
 }

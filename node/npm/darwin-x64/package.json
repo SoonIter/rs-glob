@@ -7,11 +7,11 @@
   "cpu": [
     "x64"
   ],
+  "license": "MIT",
   "main": "rs-glob.darwin-x64.node",
   "files": [
     "rs-glob.darwin-x64.node"
   ],
-  "license": "MIT",
   "engines": {
     "node": ">= 10"
   }

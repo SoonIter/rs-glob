@@ -7,11 +7,11 @@
   "cpu": [
     "arm64"
   ],
+  "license": "MIT",
   "main": "rs-glob.linux-arm64-gnu.node",
   "files": [
     "rs-glob.linux-arm64-gnu.node"
   ],
-  "license": "MIT",
   "engines": {
     "node": ">= 10"
   },

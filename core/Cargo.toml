@@ -7,4 +7,8 @@ edition = "2021"
 
 [dependencies]
 glob_match = { path = "../glob-match" }
-git2 = "0.16.0"
+futures = "*"
+tokio = { version = "1.24.1", features = [
+  "full",
+] }
+rayon = { version = "1.6.1" }

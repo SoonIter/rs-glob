@@ -1,5 +1,5 @@
 workspaces:
-  - './benchmark'
-  - './node'
+  - ./benchmark
+  - ./node
   - './node/npm/*'
   - './examples/*'

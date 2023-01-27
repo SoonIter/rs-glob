@@ -1,6 +1,7 @@
 {
   "name": "rs-glob",
   "version": "0.0.0",
+  "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
   "publishConfig": {
@@ -24,7 +25,6 @@
       ]
     }
   },
-  "license": "MIT",
   "ava": {
     "timeout": "3m"
   },
@@ -39,22 +39,24 @@
     "test": "ava",
     "version": "napi version"
   },
+  "optionalDependencies": {
+    "rs-glob-android-arm-eabi": "0.0.0",
+    "rs-glob-android-arm64": "0.0.0",
+    "rs-glob-darwin-arm64": "0.0.0",
+    "rs-glob-darwin-x64": "0.0.0",
+    "rs-glob-freebsd-x64": "0.0.0",
+    "rs-glob-linux-arm-gnueabihf": "0.0.0",
+    "rs-glob-linux-arm64-gnu": "0.0.0",
+    "rs-glob-linux-arm64-musl": "0.0.0",
+    "rs-glob-linux-x64-gnu": "0.0.0",
+    "rs-glob-linux-x64-musl": "0.0.0",
+    "rs-glob-win32-arm64-msvc": "0.0.0",
+    "rs-glob-win32-ia32-msvc": "0.0.0",
+    "rs-glob-win32-x64-msvc": "0.0.0"
+  },
   "devDependencies": {
     "@napi-rs/cli": "^2.14.4",
-    "ava": "^5.1.1"
-  },
-  "optionalDependencies": {
-    "rs-glob-android-arm-eabi": "workspace:*",
-    "rs-glob-android-arm64": "workspace:*",
-    "rs-glob-darwin-arm64": "workspace:*",
-    "rs-glob-darwin-x64": "workspace:*",
-    "rs-glob-freebsd-x64": "workspace:*",
-    "rs-glob-linux-arm-gnueabihf": "workspace:*",
-    "rs-glob-linux-arm64-gnu": "workspace:*",
-    "rs-glob-linux-arm64-musl": "workspace:*",
-    "rs-glob-linux-x64-gnu": "workspace:*",
-    "rs-glob-linux-x64-musl": "workspace:*",
-    "rs-glob-win32-arm64-msvc": "workspace:*",
-    "rs-glob-win32-ia32-msvc": "workspace:*"
+    "ava": "^5.1.1",
+    "fast-glob": "^3.2.12"
   }
 }

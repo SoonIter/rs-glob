@@ -44,18 +44,20 @@ importers:
     specifiers:
       '@napi-rs/cli': ^2.14.4
       ava: ^5.1.1
-      rs-glob-android-arm-eabi: workspace:*
-      rs-glob-android-arm64: workspace:*
-      rs-glob-darwin-arm64: workspace:*
-      rs-glob-darwin-x64: workspace:*
-      rs-glob-freebsd-x64: workspace:*
-      rs-glob-linux-arm-gnueabihf: workspace:*
-      rs-glob-linux-arm64-gnu: workspace:*
-      rs-glob-linux-arm64-musl: workspace:*
-      rs-glob-linux-x64-gnu: workspace:*
-      rs-glob-linux-x64-musl: workspace:*
-      rs-glob-win32-arm64-msvc: workspace:*
-      rs-glob-win32-ia32-msvc: workspace:*
+      fast-glob: ^3.2.12
+      rs-glob-android-arm-eabi: 0.0.0
+      rs-glob-android-arm64: 0.0.0
+      rs-glob-darwin-arm64: 0.0.0
+      rs-glob-darwin-x64: 0.0.0
+      rs-glob-freebsd-x64: 0.0.0
+      rs-glob-linux-arm-gnueabihf: 0.0.0
+      rs-glob-linux-arm64-gnu: 0.0.0
+      rs-glob-linux-arm64-musl: 0.0.0
+      rs-glob-linux-x64-gnu: 0.0.0
+      rs-glob-linux-x64-musl: 0.0.0
+      rs-glob-win32-arm64-msvc: 0.0.0
+      rs-glob-win32-ia32-msvc: 0.0.0
+      rs-glob-win32-x64-msvc: 0.0.0
     optionalDependencies:
       rs-glob-android-arm-eabi: link:npm/android-arm-eabi
       rs-glob-android-arm64: link:npm/android-arm64
@@ -69,9 +71,11 @@ importers:
       rs-glob-linux-x64-musl: link:npm/linux-x64-musl
       rs-glob-win32-arm64-msvc: link:npm/win32-arm64-msvc
       rs-glob-win32-ia32-msvc: link:npm/win32-ia32-msvc
+      rs-glob-win32-x64-msvc: link:npm/win32-x64-msvc
     devDependencies:
       '@napi-rs/cli': 2.14.4
       ava: 5.1.1
+      fast-glob: 3.2.12
 
   node/npm/android-arm-eabi:
     specifiers: {}
