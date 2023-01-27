@@ -37,18 +37,18 @@ pub async fn git_ls_tree() -> Vec<String> {
 
   paths
 }
-async fn git_ls_tree_wrapper(pattern: &str) -> Vec<String> {
-  glob_match_arr(pattern, git_ls_tree().await).await
+async fn git_ls_tree_wrapper(glob: &str) -> Vec<String> {
+  glob_match_arr(glob, git_ls_tree().await).await
 }
-async fn git_status_wrapper(pattern: &str) -> Vec<String> {
-  glob_match_arr(pattern, git_status().await).await
+async fn git_status_wrapper(glob: &str) -> Vec<String> {
+  glob_match_arr(glob, git_status().await).await
 }
 
-async fn glob_match_arr(pattern: &str, arr: Vec<String>) -> Vec<String> {
-  arr
+async fn glob_match_arr(glob: &str, paths: Vec<String>) -> Vec<String> {
+  paths
     .par_iter()
     .filter_map(|item| {
-      if glob_match(pattern, item) {
+      if glob_match(glob, item) {
         Some(item.to_owned())
       } else {
         None
@@ -57,8 +57,8 @@ async fn glob_match_arr(pattern: &str, arr: Vec<String>) -> Vec<String> {
     .collect()
 }
 
-pub async fn rg(pattern: &str) -> Vec<String> {
-  let (paths1, paths2) = futures::join!(git_ls_tree_wrapper(pattern), git_status_wrapper(pattern));
+pub async fn rg(glob: &str) -> Vec<String> {
+  let (paths1, paths2) = futures::join!(git_ls_tree_wrapper(glob), git_status_wrapper(glob));
   let mut paths_set = HashSet::new();
 
   for path in paths1 {
