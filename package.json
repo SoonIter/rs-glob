@@ -7,7 +7,8 @@
   "scripts": {
     "bootstrap": "pnpm install",
     "bench": "node -r @swc-node/register benchmark/bench.ts",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "bench_rs":"cargo bench bench"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.29.4",

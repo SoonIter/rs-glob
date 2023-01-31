@@ -12,3 +12,13 @@ tokio = { version = "1.24.1", features = [
   "full",
 ] }
 rayon = { version = "1.6.1" }
+glob = "0.3.1"
+globset = "0.4.10"
+globwalk = "0.8.1"
+
+[dev-dependencies]
+criterion = "0.4.0"
+
+[[bench]]
+name = "bench"
+harness = false

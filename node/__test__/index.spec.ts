@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import fg from 'fast-glob';
-import { glob, rsGlob } from '../index.js';
+import { glob, rsGlob, rustNativeGlob } from '../index.js';
 
 async function getCase(glob1 = '*', glob2 = glob1) {
   const [fgRes, rgRes] = await Promise.all([
@@ -24,9 +24,15 @@ test('rs-glob result *', async (t) => {
   t.deepEqual(fgRes, rgRes);
 });
 
-test('rs-glob result package.json', async (t) => {
+test('rs-glob result package.json with git ls', async (t) => {
   const [fgRes, rgRes] = await getCase('**/package.json', '**/{package}.json');
   t.log(fgRes, rgRes);
   t.deepEqual(fgRes.length, rgRes.length);
   t.deepEqual(fgRes, rgRes);
+});
+
+test('rs-glob', (t) => {
+  const res = rustNativeGlob(['**/package.json', '!**/node_modules/**']);
+  t.log(res);
+  t.assert(JSON.stringify(res));
 });

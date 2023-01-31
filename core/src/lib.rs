@@ -2,7 +2,21 @@ pub use glob_match::*;
 use rayon::prelude::{IntoParallelRefIterator, ParallelIterator};
 
 use std::{collections::HashSet, process::Command};
+pub struct NativeGlobOptions {
+  pub cwd: String,
+}
+pub fn native_glob(glob: &[&str], options: NativeGlobOptions) -> Vec<String> {
+  let NativeGlobOptions { cwd } = options;
 
+  globwalk::GlobWalkerBuilder::from_patterns(cwd, glob)
+    .follow_links(true)
+    .build()
+    .unwrap()
+    .into_iter()
+    .filter_map(Result::ok)
+    .map(|x| x.path().to_str().unwrap().to_string())
+    .collect()
+}
 pub async fn git_status() -> Vec<String> {
   let output = Command::new("git")
     .arg("status")
