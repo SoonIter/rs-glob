@@ -1,7 +1,6 @@
 use rs_glob::*;
 
-#[tokio::main]
-async fn main() {
+fn main() {
   println!(
     "{:?}",
     native_glob(

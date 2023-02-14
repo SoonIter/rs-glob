@@ -1,5 +1,4 @@
 use criterion::{criterion_group, criterion_main, Criterion};
-// use futures::executor::block_on;
 use wax::Glob;
 
 fn wax_glob() -> Vec<String> {
@@ -31,21 +30,14 @@ fn rs_native_glob() -> Vec<String> {
 //   rs_glob::rg("**/package.json").await
 // }
 
-fn bench_wax_glob(b: &mut Criterion) {
-  b.bench_function("wax_glob", |b| b.iter(wax_glob));
+fn glob_bench(b: &mut Criterion) {
+  let mut group = b.benchmark_group("glob_benchmark");
+  group.sample_size(10);
+  group.bench_function("native_glob", |b| b.iter(rs_native_glob));
+  group.bench_function("wax_glob", |b| b.iter(wax_glob));
 }
 
-// fn glob_rs_glob(b: &mut Criterion) {
-//   b.bench_function("rs_git_ls_glob", |b| {
-//     b.iter(|| block_on(git_ls_tree_glob()))
-//   });
-// }
-
-fn glob_native_glob(b: &mut Criterion) {
-  b.bench_function("native_glob", |b| b.iter(rs_native_glob));
-}
-
-criterion_group!(benches, glob_native_glob, bench_wax_glob);
+criterion_group!(benches, glob_bench);
 criterion_main!(benches);
 
 #[test]

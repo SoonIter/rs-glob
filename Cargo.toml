@@ -4,7 +4,13 @@ members = [
   "node",
 ]
 
+[profile.dev]
+debug       = 2
+incremental = true
+
 [profile.release]
 codegen-units = 1
-lto = true
-opt-level = 3
+debug         = false
+incremental   = true
+lto           = false
+opt-level     = 3
