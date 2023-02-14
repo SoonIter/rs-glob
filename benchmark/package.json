@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "benny": "^3.7.1",
     "fast-glob": "^3.2.12",
-    "rs-glob": "workspace:*"
+    "rs-glob": "workspace:*",
+    "globby": "^13.1.3"
   }
 }

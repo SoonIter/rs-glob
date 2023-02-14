@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true
   }
 }

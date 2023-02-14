@@ -2,7 +2,6 @@
 members = [
   "core",
   "node",
-  "glob-match",
 ]
 
 [profile.release]
